@@ -9,6 +9,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id "org.sonarqube" version "3.3"
 }
 
 repositories {
@@ -24,3 +25,8 @@ testImplementation group: 'junit', name: 'junit', version: '4.12'
    
 }
 
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'bankApp'
+    }
+}
